@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Date', 'Sales'],
+          ['Sun',  1],
+          ['Mon',  1.5],
+          ['Tues',  2],
+          ['Wed',  .5],
+          ['Thur',  0],
+          ['Fri',  .5],
+          ['Sat',  1]
+        ]);
+
+        var options = {
+          title: 'Week: Number of Packs Smoked',
+          vAxis: {title: 'Number of Packs Smoked', titleTextStyle: {color: 'red'}}
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
