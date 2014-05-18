@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>My Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- todo dont hotlink these -->
+    <link rel="stylesheet" href="css/jquery.mobile-1.0.1.min.css">
+    <script src="js/jquery-1.6.4.min.js"></script>
+    <script src="js/jquery.mobile-1.0.1.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+</head>
+<body>
+
+<div data-role="page" id="results">
+    <div data-role="header">
+        <h1>Graphs</h1>
+    </div><!-- /header -->
+    <div data-role="content">
+
+        <script type="text/javascript">
+          google.load("visualization", "1", {packages:["corechart"]});
+          google.setOnLoadCallback(drawChart);
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Date', 'Sales', {role: 'annotation'}],
+              ['Sun',  1, ''],
+              ['Mon',  1.5, ''],
+              ['Tues',  2, ''],
+              ['Wed',  .5, ''],
+              ['Thur',  0, ''],
+              ['Fri',  .5, ''],
+              ['Sat',  1, '']
+            ]);
+
+            var options = {
+              title: 'Week: Number of Packs Smoked',
+              vAxis: {title: 'Number of Packs Smoked', titleTextStyle: {color: 'red'}}
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('smoking_chart_div'));
+            chart.draw(data, options);
+          }
+        </script>
+
+        <div id="smoking_chart_div" style="width: 100%;"></div>
+    </div>
+</div>
