@@ -29,7 +29,7 @@
               ['Wed',  .5, 0, 1, 1, 1, ''],
               ['Thur',  0, 0, 1, 0, 0, ''],
               ['Fri',  .5, 0, 1, 1, 0, ''],
-              ['Sat',  1, 1, 1, 0, 1, '']
+              ['Sat',  1, 1, 1, 1, 1, '']
             ]);
 
             var options = {
@@ -37,13 +37,132 @@
               title: 'Week Summary',
               vAxis: {title: 'Risk Behaviors', titleTextStyle: {color: 'red'}},
               isStacked: true,
+              colors: ['#330000','#660000', '#990000', '#cc0000', '#ff0000'],
             };
 
-            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+            var chart = new google.visualization.ColumnChart(document.getElementById('summary_chart_div'));
             chart.draw(data, options);
           }
         </script>
 
-        <div id="chart_div" style="width: 100%;"></div>
+        <div id="summary_chart_div" style="width: 100%;"></div>
+
+        <script type="text/javascript">
+          google.load("visualization", "1", {packages:["corechart"]});
+          google.setOnLoadCallback(drawChart);
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Date', 'Sales'],
+              ['Sun',  1],
+              ['Mon',  1.5],
+              ['Tues',  2],
+              ['Wed',  .5],
+              ['Thur',  0],
+              ['Fri',  .5],
+              ['Sat',  1]
+            ]);
+
+            var options = {
+              legend: {position: 'none'},
+              title: 'Smoking in the Last 7 Days',
+              vAxis: {title: 'Packs Smoked', titleTextStyle: {color: 'red'}},
+              colors: ['red']
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('smoking_chart_div'));
+            chart.draw(data, options);
+          }
+        </script>
+
+        <div id="smoking_chart_div" style="width: 100%;"></div>
+
+        <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Drank', 4],
+          ['Didn\'t Drink', 3],
+        ]);
+
+        var options = {
+          title: 'Drinking in the Last 7 Days',
+          colors: ['red', 'green']
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('drinking_chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+        <div id="drinking_chart_div" style="width: 100%;"></div>
+
+        <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Stress', 5],
+          ['No Stress', 2],
+        ]);
+
+        var options = {
+          title: 'Stress in the Last 7 Days',
+          colors: ['red', 'green']
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('stress_chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+        <div id="stress_chart_div" style="width: 100%;"></div>
+
+        <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['No Healthy Subst.', 4],
+          ['Healthy Subst.', 3],
+        ]);
+
+        var options = {
+          title: 'Healthy Substitution in the Last 7 Days',
+          colors: ['red', 'green']
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('health_chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+        <div id="health_chart_div" style="width: 100%;"></div>
+
+        <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['No Excercise', 3],
+          ['Excercise', 4],
+        ]);
+
+        var options = {
+          title: 'Excercise in the Last 7 Days',
+          colors: ['red', 'green']
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('excercise_chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+        <div id="excercise_chart_div" style="width: 100%;"></div>
+
     </div>
 </div>
