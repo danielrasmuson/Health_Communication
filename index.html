@@ -44,8 +44,8 @@
                 </div>
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>Did you substitue a healthy alternative today?</legend>
-                        <input type="radio" name="radio-widget" id="link" value="link">
+                        <legend>Did you substitute a healthy alternative today?</legend>
+                        <input type="radio" name="radio-widget" id="link" id="varvar" value="link" checked="checked">
                         <label for="link">Yes</label>
                         <input type="radio" name="radio-widget" id="select" value="select">
                         <label for="select">No</label>
@@ -77,7 +77,12 @@ $( document ).ready(function() {
 
     submitButton.click(function () {
         window.location.href = './results.html';
-        alert()
+
+    });
+    var what = $("#varvar");
+    what.color = "red";
+    what.click( function () {
+        alert("yah");
     });
 
 });
