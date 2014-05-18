@@ -62,7 +62,7 @@
                 </div>
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                     <button id = "blah">Submit</button>
+                     <button href="results.html" class="ui-btn" id = "submitter">Submit</button>
                  </fieldset>
              </div>
          </form>
@@ -73,10 +73,10 @@
 <script type="text/javascript">
 
 $( document ).ready(function() {
-  var submitButton = $("#blah");
+  var submitButton = $("#submitter");
 
     submitButton.click(function () {
-        alert("blah");
+        window.location.href = './results.html';
 
     });
 
