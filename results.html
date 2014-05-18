@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<div data-role="page" id="Results">
+<div data-role="page" id="results">
     <div data-role="header">
         <h1>Graphs</h1>
     </div><!-- /header -->
@@ -22,14 +22,14 @@
           google.setOnLoadCallback(drawChart);
           function drawChart() {
             var data = google.visualization.arrayToDataTable([
-              ['Date', 'Sales'],
-              ['Sun',  1],
-              ['Mon',  1.5],
-              ['Tues',  2],
-              ['Wed',  .5],
-              ['Thur',  0],
-              ['Fri',  .5],
-              ['Sat',  1]
+              ['Date', 'Sales', {role: 'annotation'}],
+              ['Sun',  1, ''],
+              ['Mon',  1.5, ''],
+              ['Tues',  2, ''],
+              ['Wed',  .5, ''],
+              ['Thur',  0, ''],
+              ['Fri',  .5, ''],
+              ['Sat',  1, '']
             ]);
 
             var options = {
@@ -37,11 +37,11 @@
               vAxis: {title: 'Number of Packs Smoked', titleTextStyle: {color: 'red'}}
             };
 
-            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+            var chart = new google.visualization.ColumnChart(document.getElementById('smoking_chart_div'));
             chart.draw(data, options);
           }
         </script>
 
-        <div id="chart_div" style="width: 100%;"></div>
+        <div id="smoking_chart_div" style="width: 100%;"></div>
     </div>
 </div>
