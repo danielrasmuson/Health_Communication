@@ -22,26 +22,28 @@
           google.setOnLoadCallback(drawChart);
           function drawChart() {
             var data = google.visualization.arrayToDataTable([
-              ['Date', 'Sales', {role: 'annotation'}],
-              ['Sun',  1, ''],
-              ['Mon',  1.5, ''],
-              ['Tues',  2, ''],
-              ['Wed',  .5, ''],
-              ['Thur',  0, ''],
-              ['Fri',  .5, ''],
-              ['Sat',  1, '']
+              ['Behavior', 'Smoking', 'Drinking', 'Stress', 'No Healthy Substitute', 'No Physical Activity', {role: 'annotation'}],
+              ['Sun',  1, 1, 1, 0, 0, ''],
+              ['Mon',  1.5, 1, 0, 1, 0, ''],
+              ['Tues',  2, 1, 0, 0, 1, ''],
+              ['Wed',  .5, 0, 1, 1, 1, ''],
+              ['Thur',  0, 0, 1, 0, 0, ''],
+              ['Fri',  .5, 0, 1, 1, 0, ''],
+              ['Sat',  1, 1, 1, 0, 1, '']
             ]);
 
             var options = {
-              title: 'Week: Number of Packs Smoked',
-              vAxis: {title: 'Number of Packs Smoked', titleTextStyle: {color: 'red'}}
+              legend: {position: 'top', maxLines: 3, textStyle: {color: 'red', fontSize: 8}},
+              title: 'Week Summary',
+              vAxis: {title: 'Risk Behaviors', titleTextStyle: {color: 'red'}},
+              isStacked: true,
             };
 
-            var chart = new google.visualization.ColumnChart(document.getElementById('smoking_chart_div'));
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
             chart.draw(data, options);
           }
         </script>
 
-        <div id="smoking_chart_div" style="width: 100%;"></div>
+        <div id="chart_div" style="width: 100%;"></div>
     </div>
 </div>
