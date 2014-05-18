@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+    google.load('visualization', '1', {
+        'packages': ['geochart']
+    });
+    google.setOnLoadCallback(drawRegionsMap);
+
+    function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+            ['zip','Count of STORE NAME'],
+            [60639,25],
+            [60623,23],
+            [60609,20],
+            [60632,20],
+            [60620,18],
+            [60640,18],
+            [60647,18],
+            [60608,17],
+            [60618,16],
+            [60629,16],
+            [60617,15],
+            [60625,14],
+            [60626,14],
+            [60628,13],
+            [60634,13],
+            [60636,13],
+            [60651,13],
+            [60614,12],
+            [60619,12],
+            [60622,11],
+            [60637,11],
+            [60641,11],
+            [60645,11],
+            [60616,9],
+            [60613,8],
+            [60621,8],
+            [60624,8],
+            [60643,8],
+            [60630,7],
+            [60644,7],
+            [60610,6],
+            [60611,6],
+            [60657,6],
+            [60659,6],
+            [60607,5],
+            [60612,5],
+            [60615,5],
+            [60638,5],
+            [60649,5],
+            [60653,5],
+            [60660,5],
+            [60707,5],
+            [60646,4],
+            [60654,4],
+            [60655,4],
+            [60601,3],
+            [60631,3],
+            [60642,3],
+            [60605,2],
+            [60633,2],
+            [60652,2],
+            [60656,2],
+            [60661,2],
+            [60827,2]
+        ]);
+
+        var options = {
+            resolution: 'metros',
+            region: "US-IL"
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    };
+    </script>
+</head>
+
+<body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+</body>
+
+</html>
