@@ -28,14 +28,7 @@ body{
 #header{
     width: 100%;
     color: white;
-    background: #398235; /* Old browsers */
-    background: -moz-linear-gradient(top,  #398235 0%, #75b74c 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#398235), color-stop(100%,#75b74c)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #398235 0%,#75b74c 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #398235 0%,#75b74c 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #398235 0%,#75b74c 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #398235 0%,#75b74c 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#398235', endColorstr='#75b74c',GradientType=0 ); /* IE6-9 */
+    background: #575149;
     padding-top: 1px;
     padding-bottom: 5px;   
     text-align: center;
