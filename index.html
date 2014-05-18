@@ -27,42 +27,42 @@
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <legend>Did you drink today?</legend>
-                        <input type="radio" name="radio-widget" id="link" value="link" >
-                        <label for="link">Yes</label>
-                        <input type="radio" name="radio-widget" id="select" value="select" >
-                        <label for="select">No</label>
+                        <input type="radio" name="radio-widget" id="drinkYes" value="link" >
+                        <label for="drinkYes" class = "select">Yes</label>
+                        <input type="radio" name="radio-widget" id="drinkNo" value="select" >
+                        <label for="drinkNo" class = "select">No</label>
                     </fieldset>
                 </div>
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <legend>Did you feel stressed today?</legend>
-                        <input type="radio" name="radio-widget" id="link" value="link">
-                        <label for="link">Yes</label>
-                        <input type="radio" name="radio-widget" id="select" value="select">
-                        <label for="select">No</label>
+                        <input type="radio" name="radio-widget" id="stressYes" value="link" >
+                        <label for="stressYes" class = "select">Yes</label>
+                        <input type="radio" name="radio-widget" id="stressNo" value="select">
+                        <label for="stressNo" class = "select">No</label>
                     </fieldset>
                 </div>
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <legend>Did you substitute a healthy alternative today?</legend>
-                        <input type="radio" name="radio-widget" id="link" id="varvar" value="link" checked="checked">
-                        <label for="link">Yes</label>
-                        <input type="radio" name="radio-widget" id="select" value="select">
-                        <label for="select">No</label>
+                        <input type="radio" name="radio-widget" id="healthyYes" id="varvar" value="link" >
+                        <label for="healthyYes" class = "select">Yes</label>
+                        <input type="radio" name="radio-widget" id="healthyNo" value="select">
+                        <label for="healthyNo" class = "select">No</label>
                     </fieldset>
                 </div>
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <legend>Do you think you were active today?</legend>
-                        <input type="radio" name="radio-widget" id="link" value="link">
-                        <label for="link">Yes</label>
-                        <input type="radio" name="radio-widget" id="select" value="select">
-                        <label for="select">No</label>
+                        <input type="radio" name="radio-widget" id="activeYes" value="link" >
+                        <label for="activeYes" class = "select">Yes</label>
+                        <input type="radio" name="radio-widget" id="activeNo" value="select">
+                        <label for="activeNo" class = "select">No</label>
                     </fieldset>
                 </div>
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                     <button href="results.html" class="ui-btn" id = "submitter">Submit</button>
+                     <button id = "submitter">Submit</button>
                  </fieldset>
              </div>
          </form>
@@ -76,14 +76,14 @@ $( document ).ready(function() {
   var submitButton = $("#submitter");
 
     submitButton.click(function () {
+    var status = $('.select').map(function(){
+        return $(this).hasClass('ui-btn-active');
+    });
+        alert("blaj");
         window.location.href = './results.html';
+    });
 
-    });
-    var what = $("#varvar");
-    what.color = "red";
-    what.click( function () {
-        alert("yah");
-    });
+
 
 });
 </script>
