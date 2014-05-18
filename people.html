@@ -6,27 +6,30 @@
     google.load("visualization", "1", {
         packages: ["corechart"]
     });
-    google.setOnLoadCallback(drawChart());
+    google.setOnLoadCallback(drawChart);
 
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-            ['Date', 'Sales'],
-            ['Susan Boyle', 1],
-            ['Tom Cruise', 1],
-            ['Waren Buffet', 1],
-            ['Jennifer Lawrence', 1],
-            ['Oprah Winfrey', 1],
-            ['Steven Spielberg', 1],
-            ['Madonna', 1]
+            ['Date', 'Sales', {role: 'style'}],
+
+            // colors: ['blue','green','green','red','green','red','yellow'],
+            ['Susan Boyle', 1, 'green'],
+            ['Tom Cruise', 1.5, '#DFDF00'],
+            ['Waren Buffet', 2, 'red'],
+            ['Jennifer Lawrence', .5, 'green'],
+            ['Oprah Winfrey', 1.5, 'red'],
+            ['Steven Spielberg', .5, 'green'],
+            ['Madonna', 1, '#DFDF00'],
         ]);
 
         var options = {
             vAxis: {
                 titleTextStyle: {
-                    color: 'red'
-                }
-            }
-            // colors: [getColor(boyle), getColor(cruise), getColor(buffet), getColor(lawrence), getColor(winfrey), getColor(spielberg), getColor(madonna)]
+                    color: 'black'
+                },
+                title: 'Average Daily Risk Behaviors',
+            },
+            legend: {position: 'none'}
         };
 
         var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
@@ -40,17 +43,15 @@
         }
         });
     }
-    function getColor(value){
-        return "red";
-    }
     </script>
 </head>
 <body>
 <div id="content">
-
-
-    <h1 class="center">Clientele Dashboard</h1>
-    <h2 class="center">May 11-17th, 2014</h2>
+    
+    <div id="header">
+        <h1 class="center">Clientele Dashboard</h1>
+        <h2 class="center">May 11-17th, 2014</h2>
+    </div>
     <div id="chart_div" style="width: 900px; height: 500px;"></div>
 
 
