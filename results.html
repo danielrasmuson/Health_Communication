@@ -33,9 +33,9 @@
             ]);
 
             var options = {
-              legend: {position: 'top', maxLines: 3, textStyle: {color: 'red', fontSize: 8}},
+              legend: {position: 'top', maxLines: 3, textStyle: {color: 'black', fontSize: 8}},
               title: 'Week Summary',
-              vAxis: {title: 'Risk Behaviors', titleTextStyle: {color: 'red'}},
+              vAxis: {title: 'Risk Behaviors', titleTextStyle: {color: 'black'}},
               isStacked: true,
               colors: ['#330000','#660000', '#990000', '#cc0000', '#ff0000'],
             };
@@ -65,8 +65,8 @@
             var options = {
               legend: {position: 'none'},
               title: 'Smoking in the Last 7 Days',
-              vAxis: {title: 'Packs Smoked', titleTextStyle: {color: 'red'}},
-              colors: ['red']
+              vAxis: {title: 'Packs Smoked', titleTextStyle: {color: 'black'}},
+              colors: ['blue']
             };
 
             var chart = new google.visualization.ColumnChart(document.getElementById('smoking_chart_div'));
@@ -88,7 +88,7 @@
 
         var options = {
           title: 'Drinking in the Last 7 Days',
-          colors: ['red', 'green']
+          colors: ['blue', 'green']
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('drinking_chart_div'));
@@ -110,7 +110,7 @@
 
         var options = {
           title: 'Stress in the Last 7 Days',
-          colors: ['red', 'green']
+          colors: ['blue', 'yellow']
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('stress_chart_div'));
@@ -132,7 +132,7 @@
 
         var options = {
           title: 'Healthy Substitution in the Last 7 Days',
-          colors: ['red', 'green']
+          colors: ['blue', 'purple']
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('health_chart_div'));
@@ -154,7 +154,7 @@
 
         var options = {
           title: 'Excercise in the Last 7 Days',
-          colors: ['red', 'green']
+          colors: ['red', 'blue']
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('excercise_chart_div'));
