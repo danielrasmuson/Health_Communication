@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>My Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,20 +8,20 @@
     <script src="js/jquery-1.6.4.min.js"></script>
     <script src="js/jquery.mobile-1.0.1.min.js"></script>
 </head>
-
 <body>
 
     <div data-role="page">
+
         <div data-role="header">
             <h1>TODO Business Title</h1>
-        </div>
-        <!-- /header -->
+        </div><!-- /header -->
+
         <div data-role="content">
             <form action="#" method="get">
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <label for="name">How many packs did you smoke today?</label>
-                        <input type="number" pattern="[0-9]?[.]?[0-9]+" name="name" id="name" value="" />
+                        <input type="number" pattern="[0-9]?[.]?[0-9]+" name="name" id="name" value=""  />
                     </fieldset>
                 </div>
                 <div data-role="fieldcontain">
@@ -63,21 +62,24 @@
                 </div>
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <button href="results.html" class="ui-btn" id="submitter">Submit</button>
-                    </fieldset>
-                </div>
-            </form>
-        </div>
-        <!-- /content -->
-    </div>
-    <!-- /page -->
+                     <button id = "submitter">Submit</button>
+                 </fieldset>
+             </div>
+         </form>
+     </div><!-- /content -->
+ </div><!-- /page -->
 
 </body>
 <script type="text/javascript">
-$(document).ready(function() {
-    var submitButton = $("#submitter");
 
-    submitButton.click(function() {
+$( document ).ready(function() {
+  var submitButton = $("#submitter");
+
+    submitButton.click(function () {
+    var status = $('.select').map(function(){
+        return $(this).hasClass('ui-btn-active');
+    });
+        alert("blaj");
         window.location.href = './results.html';
     });
 
@@ -87,3 +89,4 @@ $(document).ready(function() {
 </script>
 
 </html>
+

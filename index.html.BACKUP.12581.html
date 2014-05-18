@@ -28,10 +28,17 @@
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
                         <legend>Did you drink today?</legend>
+<<<<<<< HEAD
                         <input type="radio" name="radio-widget" id="drinkYes" value="link" >
                         <label for="drinkYes" class = "select">Yes</label>
                         <input type="radio" name="radio-widget" id="drinkNo" value="select" >
                         <label for="drinkNo" class = "select">No</label>
+=======
+                        <input type="radio" name="radio-widget" id="link" value="link">
+                        <label for="link">Yes</label>
+                        <input type="radio" name="radio-widget" id="select" value="select">
+                        <label for="select">No</label>
+>>>>>>> FETCH_HEAD
                     </fieldset>
                 </div>
                 <div data-role="fieldcontain">
@@ -63,6 +70,14 @@
                 </div>
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+<<<<<<< HEAD
+                     <button id = "submitter">Submit</button>
+                 </fieldset>
+             </div>
+         </form>
+     </div><!-- /content -->
+ </div><!-- /page -->
+=======
                         <button href="results.html" class="ui-btn" id="submitter">Submit</button>
                     </fieldset>
                 </div>
@@ -71,14 +86,33 @@
         <!-- /content -->
     </div>
     <!-- /page -->
+>>>>>>> FETCH_HEAD
 
 </body>
 <script type="text/javascript">
 $(document).ready(function() {
     var submitButton = $("#submitter");
 
+<<<<<<< HEAD
+$( document ).ready(function() {
+  var submitButton = $("#submitter");
+
+    submitButton.click(function () {
+    var status = $('.select').map(function(){
+        return $(this).hasClass('ui-btn-active');
+    });
+        alert("blaj");
+        window.location.href = './results.html';
+=======
     submitButton.click(function() {
         window.location.href = './results.html';
+
+    });
+    var what = $("#varvar");
+    what.color = "red";
+    what.click(function() {
+        alert("yah");
+>>>>>>> FETCH_HEAD
     });
 
 
