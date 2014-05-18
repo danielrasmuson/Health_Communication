@@ -1,0 +1,73 @@
+<html>
+<head>
+    <link rel="stylesheet" href="css\people.css">
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+    google.load("visualization", "1", {
+        packages: ["corechart"]
+    });
+    google.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Date', 'Sales', {role: 'style'}],
+
+            // colors: ['blue','green','green','red','green','red','yellow'],
+            ['Isaac Asimov', 2.5, '#DFDF00'],
+            ['Justin Bieber', 3.5, 'red'],
+            ['Susan Boyle', 1, 'green'],
+            ['Waren Buffet', 2, '#DFDF00'],
+            ['Tom Cruise', 1.5, 'green'],
+            ['Matt Damon', 1.5, 'green'],
+            ['Dessa', 0, 'green'],
+            ['Bill Gates', 2, '#DFDF00'],
+            ['Mary Jane', 2, '#DFDF00'],
+            ['Jennifer Lawrence', 2.5, '#DFDF00'],
+            ['Tavis Leighton', 0.5, 'green'],
+            ['Madonna', 1, 'green'],
+            ['Ted Mosby', .5, 'green'],
+            ['Peter Parker', 1.5, 'green'],
+            ['Brad Pitt', 3, 'red'],
+            ['Daniel Rasmuson', 3, 'red'],
+            ['Steven Spielberg', .5, 'green'],
+            ['Donald Trump', 1.5, 'green'],
+            ['Oprah Winfrey', 1.5, 'green'],
+            ['Nathan Yeazel', 1, 'green'],
+        ]);
+
+        var options = {
+            vAxis: {
+                titleTextStyle: {
+                    color: 'black'
+                },
+                title: 'Average Daily Risk Behaviors',
+            },
+            legend: {position: 'none'}
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+
+        document.getElementById("defs").href = "https://www.google.com/";
+
+        google.visualization.events.addListener(chart, 'select', function() {
+            if (chart.getSelection()[0].row === 0){
+                location.href = "individual.html"
+        }
+        });
+    }
+    </script>
+</head>
+<body>
+<div id="content">
+
+
+    <h1 class="center">Clientele Dashboard</h1>
+    <h2 class="center">May 11-17th, 2014</h2>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+
+
+</div>
+
+</body>
+</html>
